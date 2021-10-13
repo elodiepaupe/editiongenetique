@@ -5,7 +5,7 @@
 
    <xsl:output method="html" doctype-system="about:legacy-compat"/>
 
-   <!-- <xsl:strip-space elements="*" /> -->
+   <xsl:strip-space elements="*" />
 
    <!-- IMPORT SETTINGS -->
    <xsl:include href="settings.xsl"/>
@@ -195,8 +195,8 @@
          <button id="selectVersion" class="topMenuButton dropdownButton">
             <xsl:value-of select="count($witnesses)"/>
             <xsl:text> Total Versions</xsl:text>
-            <img class="noDisplay" src="vmachine-Dateien/menuArrowUp.htm" alt="arrow up"/>
-            <img src="vmachine-Dateien/menuArrowDown.htm" alt="arrow down"/>
+            <img class="noDisplay" src="../vm-images/arrowup.png" alt="arrow up"/>
+            <img src="../vm-images/arrowdown.png" alt="arrow down"/>
          </button>
          <ul>
             <xsl:attribute name="id">versionList</xsl:attribute>
@@ -328,7 +328,7 @@
             <xsl:value-of select="$witId"/>
          </xsl:attribute>
          <div class="panelBanner">
-            <img class="closePanel" title="Close panel" src="vmachine-Dateien/closePanelButton.htm"
+            <img class="closePanel" title="Close panel" src="../vm-images/closePanel.png"
                alt="X (Close panel)"/>
             <!-- To change the title of the panel banner of each version panel change the text below -->
 
@@ -440,7 +440,7 @@
             <xsl:text>ui-widget-content ui-resizable panel noDisplay</xsl:text>
          </xsl:attribute>
          <div class="panelBanner">
-            <img class="closePanel" title="Close panel" src="vmachine-Dateien/closePanelButton.htm"
+            <img class="closePanel" title="Close panel" src="../vm-images/closePanel.png"
                alt="X (Close panel)"/> Bibliographic Information </div>
          <div class="bibContent">
             <h2>
@@ -574,7 +574,7 @@
 
             <div class="panelBanner">
                <img class="closePanel" title="Close panel"
-                  src="vmachine-Dateien/closePanelButton.htm" alt="X (Close panel)"/> Critical
+                  src="../vm-images/closePanel.png" alt="X (Close panel)"/> Critical
                Introduction </div>
             <div class="critContent">
                <h4>Critical Introduction</h4>
@@ -625,7 +625,7 @@
          </xsl:attribute>
 
          <div class="panelBanner">
-            <img class="closePanel" title="Close panel" src="vmachine-Dateien/closePanelButton.htm"
+            <img class="closePanel" title="Close panel" src="../vm-images/closePanel.png"
                alt="X (Close panel)"/> Textual Notes </div>
          <xsl:for-each select="//tei:body//tei:note[not(@type = 'image')]">
             <xsl:if test="not(ancestor::tei:note)">
@@ -1404,7 +1404,7 @@
                   </xsl:otherwise>
                </xsl:choose>
             </span>
-            <img class="viewerHandleRt closePanel" src="vmachine-Dateien/closePanelButton.htm"
+            <img class="viewerHandleRt closePanel" src="../vm-images/closePanel.png"
                title="Close panel" alt="X (Close panel)"/>
          </div>
          <div class="viewerContent" id="content_imgViewer">
