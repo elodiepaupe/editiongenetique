@@ -1,0 +1,921 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Vita sancti Hymerii -- The Versioning Machine 5.0</title>
+      <meta charset="utf-8">
+      <link rel="stylesheet" type="text/css" href="../src/js/jquery-ui-1.11.3/jquery-ui.min.css">
+      <link rel="stylesheet" type="text/css" href="../src/vmachine.css">
+      <script type="text/javascript" src="../src/js/jquery-1.11.2.min.js"></script>
+      <script type="text/javascript" src="../src/js/jquery-ui-1.11.3/jquery-ui.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="../src/panzoom/panzoom.css">
+      <script type="text/javascript" src="../src/panzoom/jquery.panzoom.min.js"></script>
+      <script type="text/javascript">
+            /*NOTES PANEL: To change the VM so
+             that the notes panel page does not appear at the initial load, change the constant
+             INITIAL_DISPLAY_BIB_PANEL from "true" to "false" below */ INITIAL_DISPLAY_NOTES_PANEL =
+            false;
+            /*BIB PANEL: To change the VM so that the
+            bibliographic information page does not appear at the initial load, change the constant
+            INITIAL_DISPLAY_BIB_PANEL from "true" to "false" below */ INITIAL_DISPLAY_BIB_PANEL =
+            true;
+            /**The number of version/witness panels to be
+            displayed initially */ INITIAL_DISPLAY_NUM_VERSIONS = 2;
+            /** CRIT PANEL: Critical information should be encoded as
+            tei:notesStmt/tei:note[@type='critIntro'] in the TEI files --> * To change the VM so that
+            the critical information page does not * appear at the initial load, change the constant
+            INITIAL_DISPLAY_CRIT_PANEL from "true" to "false" */ INITIAL_DISPLAY_CRIT_PANEL =
+            false;
+            /** To change the VM so that line numbers are
+            hidden by default, change the constant INITIAL_DISPLAY_LINENUMBERS from * "true" to "false" */
+            INITIAL_DISPLAY_LINENUMBERS = true;
+            var timelinePoints = new Array();
+            var timelineDurations = new Array();</script>
+      <script type="text/javascript" src="../src/vmachine.js"></script>
+   </head>
+   <body>
+      <div id="mainBanner">
+         <div id="brandingLogo">
+            <a href="../samples.html"><img id="logo" alt="Powered by the Versioning Machine"
+                  src="../vm-images/LogoSilver.png"></a>
+         </div>
+         <div id="bannerImageContainer">
+            <img id="logo" alt="Powered by the Versioning Machine"
+               src="../vm-images/HeaderBackground.png">
+            <div id="headline">
+               <h1>Vita sancti Hymerii</h1>
+            </div>
+            <nav id="mainControls">
+               <ul>
+                  <li><button id="selectVersion" class="topMenuButton dropdownButton">2 Total
+                           Versions<img class="noDisplay" src="vmachine-Dateien/menuArrowUp.htm"
+                           alt="arrow up"><img src="vmachine-Dateien/menuArrowDown.htm"
+                           alt="arrow down"></button><ul id="versionList"
+                        class="dropdown notVisible">
+                        <li data-panelid="F">
+                           <div class="listText">
+                              <div>
+                                 <a href="#"
+                                    title="F: Codex Friburgensis L 306&#xA;                  &#xA;                "
+                                    >Version F</a>
+                              </div>
+                              <div>
+                                 <button>OFF</button>
+                              </div>
+                           </div>
+                        </li>
+                        <li data-panelid="MsBE">
+                           <div class="listText">
+                              <div>
+                                 <a href="#"
+                                    title="MsBE: Bréviaire manuscrit de Berne&#xA;                 &#xA;                "
+                                    >Version MsBE</a>
+                              </div>
+                              <div>
+                                 <button>OFF</button>
+                              </div>
+                           </div>
+                        </li>
+                     </ul>
+                  </li>
+                  <li data-panelid="bibPanel"
+                     title="Clicking this button triggers the bibliographic panel to appear&#xA;            or disappear."
+                        ><button class="topMenuButton">Bibliographic panel</button></li>
+                  <li data-panelid="notesPanel"
+                     title="Clicking this button triggers the notes panel to appear or&#xA;               disappear."
+                        ><button class="topMenuButton listText">Notes panel</button></li>
+               </ul>
+            </nav>
+         </div>
+      </div>
+      <div id="mssArea">
+         <div id="bibPanel" class="ui-widget-content ui-resizable panel noDisplay">
+            <div class="panelBanner"><img class="closePanel" title="Close panel"
+                  src="vmachine-Dateien/closePanelButton.htm" alt="X (Close panel)"> Bibliographic
+               Information </div>
+            <div class="bibContent">
+               <h2>Vita sancti Hymerii</h2>
+               <h4>Original Source</h4>
+               <p>Travail d'encodage réalisé à partir des manuscrits.</p>
+               <h4>Witness List</h4>
+               <ul>
+                  <li><strong>Witness F:</strong> Codex Friburgensis L 306 </li>
+                  <li><strong>Witness MsBE:</strong> Bréviaire manuscrit de Berne </li>
+               </ul>
+               <h4>Electronic Edition Information:</h4>
+               <h5>Publication Details:</h5> Propre et non-institutionnelle <div class="ab">Creative
+                  Commons Attribution 4.0 CC BY-NC-SA 4.0 FR NB: le texte latin employé comme source
+                  s'est élevé dans le domaine public. </div>
+               <h4>Encoding Principles</h4>
+               <div class="ab">Les s long sont remplacés, les esperluettes et les diphtongues
+                  également. </div>
+               <div class="ab">La mise en page est respectée par les éléments milestone.</div>
+               <div class="ab">Les formes ne supportant pas la lemmatisation sont proposéses en
+                  correction (ex. cio/tio). </div>
+            </div>
+         </div>
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="F">
+            <div class="panelBanner">
+               <img class="closePanel" title="Close panel"
+                  src="vmachine-Dateien/closePanelButton.htm" alt="X (Close panel)">
+               <a
+                  title="Version F: Codex Friburgensis L 306&#xA;                  &#xA;                "
+                  >Version F: Codex Friburgensis L 306 </a>
+            </div>
+            <div class="mssContent">
+               <div class="div1 type-source">
+                  <div class="paragraph">
+                     <span class="textcontent"> Fuit vir nobilis </span>
+                     <div class="apparatus apparatus_1" data-app-id="apparatus_1">
+                        <div class="reading " data-reading-wits="">
+                           <span class="textcontent">quidam</span>
+                        </div>
+                        <div class="reading MsBA" data-reading-wits="MsBA">
+                           <span class="textcontent">quondam</span>
+                        </div>
+                     </div>
+                     <span class="textcontent"> gratia Dei preditus, nomine Ymerius. Hic, a puerili
+                        aetate Deo deditus, </span>
+                     <div class="choice">
+                        <span class="textcontent">quorumdam</span>
+                        <div class="corr">
+                           <div class="interior">
+                              <span class="textcontent">quorundam</span>
+                           </div>
+                        </div>
+                     </div>
+                     <span class="textcontent"> secularium tumultibus depressus, qui nulli animum
+                        dedit voluptati. Sed dum in hac terra adhuc esset positus, despexit jam
+                        quasi aridum mundum cum </span>
+                     <div class="apparatus apparatus_2" data-app-id="apparatus_2">
+                        <div class="reading " data-reading-wits="">
+                           <span class="textcontent">horore</span>
+                        </div>
+                        <div class="reading MsBA" data-reading-wits="MsBA">
+                           <span class="textcontent">Flore</span>
+                        </div>
+                     </div>
+                     <span class="textcontent">. Liberiori namque genere </span>
+                     <div class="apparatus apparatus_3" data-app-id="apparatus_3">
+                        <div class="reading " data-reading-wits="">
+                           <span class="textcontent">ex provincia Augaugie et vico Lugduniaco
+                              oriundus, sacris litteris instructus, </span>
+                        </div>
+                        <div class="reading MsBE" data-reading-wits="MsBE">
+                           <span class="textcontent">Fuit vir nobilis nomine Ymerius ex provincia
+                              Alseaugiae oriendus, sacris litteris instructus qui nulli animumv
+                              voluptati dedit.</span>
+                        </div>
+                     </div>
+                     <span class="textcontent"> cum multos cerneret ire per abruta viciorum ab
+                        occupatione secularium negociorum se custodiendo abstrahere curavit. Maluit
+                        quippe Deo adherere quam hujus mundi viciis inservire. </span>
+                  </div>
+                  <div class="paragraph">
+                     <span class="textcontent">Videbat enim homines mortales secularia opera
+                        exercere, unde gemens in corde suo dicebat : Quid faciam quod cotidie
+                        inpugnor pravis cogitationibus et refrigerii locum minime invenire valeo?
+                        Consilio autem divinitus inito, sacre conversationis oraculum cepit
+                        edificare in paterne hereditatis proprietate. Cumque vir Dei ceptum opus in
+                        promptu haberet, quedam supervenit muliercula nimio stupore accensa, et </span>
+                     <span class="textcontent"> videndi cupiditate anxia et interrogat de muri
+                        fabrica, ex qua re Christi famulus Ymerius intelligens non concessum sibi a
+                        Deo esse locum, imperfectum muri reliquit edificium. Ac citoque proprio
+                        famulo nomine Elberto, relicta domo rebusque propriis ac contribulibus suis
+                        et per abruta viarum deserti iter inchoans devenit in vallem quam vulgo
+                        Susingum nominant, que eodem tempore inhabitata et colonis inculta manebat,
+                        in qua modico tempore ut bonus agricola sentes et spinas propriis manibus
+                        extirpare cepit et ad cultum redigere, memorans psalmographi dulcia eloquia,
+                        qui ait : </span>
+                     <span class="textcontent">De proprio labore manuum panem edentem beatum
+                        fore</span>
+                     <span class="textcontent">. Sato vero agro excretisque segetibus et in aristas
+                        de floribus deductis, nullus in spicis messis colligende fructus apparuit,
+                        cernens igitur sacer Ymerius hoc peractum esse omnipotentis Dei examinatione
+                        ut per Salomonem sapientia testatur : </span>
+                     <span class="textcontent">Quod sicut aurum igne probatur, ita corda filiorum
+                        hominum conprobat Dominus</span>
+                     <span class="textcontent">. </span>
+                  </div>
+                  <div class="paragraph">
+                     <span class="textcontent"> Cepit requirere alme Dei genitricis Lausannensem
+                        ecclesiam</span>
+                     <div class="noteicon">n <div class="note">
+                           <strong>Note:</strong>
+                           <span class="textcontent"> Cernens vir sanclus examinationem Dei, teste
+                              sapientia, quod sicut aurum in igne probalur, ila corda filiorum
+                              hominum comprobat Deus, lawsamiensem ecclesiam requisivit, petens ut
+                              ei circa locum episcopio vicinum degere licuisset. Qui locum aptum non
+                              inveniens Irosolimam transfretavit. Ms.B. = Bréviaire manuscrit de
+                              Berne</span>
+                        </div>
+                     </div>
+                     <span class="textcontent">, ad quam cum pervenisset, honorabiliter a rectoribus
+                        ejusdem ecclesie susceptus est ; horum igitur supplex postulat adjutorium
+                        utei circa locum episcopio vicinum degere licuisset; inter deprecativa autem
+                        verba cartam ab eis eo ordine sibi inscribi rogavit, ut si divina dementia
+                        aliquem illi adquirendi tribueret gratiam duas adquisitionum particulas
+                        prefate ecclesie redderet, tertiam autem portionem sibi famulantibus.
+                        Perambulans igitur vicina omnia perscrutando loca aptum sibi locum minime
+                        invenit, in se itaque reversus vir Dei cepit in interiori suo affectuose
+                        meditari, ut loca illa que Christus corporaliter totius mundi salutem
+                        edocendo circumivit, quocunque incumbente labore visitaret, hanc maxime
+                        labori suo pretendens utilitatem ut si superno placeret auctori, crucem
+                        Christi quam suo gestabat in corpore, usque ad martirii </span>
+                     <span class="textcontent"> palmam quacumque salutari incidente occasione
+                        deportaret; illud dominicum sepissime revolvens : </span>
+                     <span class="textcontent">Qui vult venire post me abneget semetipsum et tollat
+                        crucem suam, et sequatur me</span>
+                     <span class="textcontent">. Hac igitur tam sancta vir venerabilis ductus </span>
+                     <div class="choice">
+                        <span class="textcontent">intentione</span>
+                        <div class="corr">
+                           <div class="interior">
+                              <span class="textcontent">intencione</span>
+                           </div>
+                        </div>
+                     </div>
+                     <span class="textcontent"> Iherosolimam transfretavit, per triennium
+                        sanctissima loca visitando, vigiliis et orationibus die noctuque incessanter
+                        desudavit, post modum vero ut talentum sibi creditum ad usuram lacius
+                        multiplicaret, lingua syra arabicaque inibi instrui instituit. Ea autem
+                        tempestate accidit ut quedam grifis immanissima quondam paganorum insulam,
+                        cujus nomen pro loci remocione et temporis vetustate ab usu nostro
+                        discessit, cotidie insultando horrenda ingluvie devastaret, hoc divina ut
+                        credimus faciente dispensatione, ut qui pro Creatore creaturas adorabant ab
+                        ipsis merito creaturis adligerentur, et quia in prosperis Deum non
+                        recognoverant saltem tormentis ingruentibus afflicti salvatorem
+                        desiderarent. Tanta itaque urgente necessitate rex prefate insule consilio
+                        inito cum primatibus suis, plebe etiam idipsum acclamante, quod fama
+                        Christiane religionis que plurimum Iherosolimis vigebat jamjam ad ipsos
+                        pervenerat, legatos cum litteris ad primates Iherosolimitane urbis
+                        transmisit, </span>
+                     <div class="apparatus apparatus_4" data-app-id="apparatus_4">
+                        <div class="reading " data-reading-wits="">
+                           <span class="textcontent">testificans</span>
+                        </div>
+                        <div class="reading MsBA" data-reading-wits="MsBA">
+                           <span class="textcontent">testificatur</span>
+                        </div>
+                     </div>
+                     <span class="textcontent"> ut si quem sanctum virum ad ipsum </span>
+                     <div class="apparatus apparatus_5" data-app-id="apparatus_5">
+                        <div class="reading " data-reading-wits="">
+                           <span class="textcontent">transmitteret</span>
+                        </div>
+                        <div class="reading MsBA" data-reading-wits="MsBA">
+                           <span class="textcontent">mitterent</span>
+                        </div>
+                     </div>
+                     <span class="textcontent"> qui terram suam </span>
+                     <div class="apparatus apparatus_6" data-app-id="apparatus_6">
+                        <div class="reading " data-reading-wits="">
+                           <span class="textcontent">ab instanti tormento liberaret, tam ipse quam
+                              principes sui et omnis plebs sibi subdita fidem christianam
+                              susciperent</span>
+                        </div>
+                        <div class="reading MsBA" data-reading-wits="MsBA">
+                           <span class="textcontent">ab instanti periculo liberaret, tam ipse quam
+                              omnis plebs sibi subdita, fidem christianam susciperet.</span>
+                        </div>
+                     </div>
+                     <span class="textcontent">. Quo audito viri Iherosolimitani tantum... aggredi
+                        hesitantes renuerunt, beatus vero Ymerius flamine divino celitus inspiratus
+                        non de sua presumens sanctitate sed de sui auctoris confidens virtute, qui
+                        dixit : Si habetis fidem, </span>
+                     <span class="textcontent">sicut granum sinapis diceretis huic arbori moro
+                        eradicare et transplantare in mare et obediret vobis</span>
+                     <span class="textcontent">, legationem a sancto patriarcha suscipiens et
+                        legatis perducentibus eum ad prefatam insulam pervenit, ubi cum magna
+                        honorificentia a </span>
+                     <span class="textcontent"> rege et populo susceptus est. Die itaque prenominata
+                        congruum in locum accito conventu tam plebis quam principum, cum beatus
+                        Ymerius staret in medio eorum, supradicta detestanda belua a scopulis quibus
+                        predam speculando insidebat, descendens in astantem plebem conabatur irruere
+                        ipsam depopulari gestiens, ad cujus alarum horribilem applausum omnes
+                        unanimiter perteriti cum ejulatu magno ad terram prostrati sunt. Beatus vero
+                        Ymerius nullo terrore perculsus est, sed stans in medio conventu, facto
+                        signo crucis imperavit. belue ut mansueta et sine alicujus lesione in locum
+                        sibi paratum descenderet. Ad cujus vocem igitur mansueta ac quasi domestica,
+                        continuo grifis in locum sibi a sancto viro perostensum descendit, beatus
+                        vero Ymerius intendens in coelum orationem cum lacrymis hujusmodi fudit
+                        dicens: « Omnis qui in filii tui humilitate jacentem mundum erexisti, erige
+                        corda </span>
+                     <a class="link" href=""></a>
+                     <span class="textcontent"> prostrate plebis sancti spiritus gratia ut de
+                        infidelitatis tenebris erecta et de instanti periculo ad gratiam sanctissimi
+                        nominis tui liberata et claritatem veri luminis ipsum videlicet solem
+                        justitie recognoscat... Ihesum Christum Dominum nostrum, qui tecum vivit et
+                        regnat per omnia secula seculorum. Amen.» Peracta autem oratione, imperavit
+                        grifi ut minimam pedis sui ungulam proprio rostro abrasam in memoriam rei
+                        geste cederet, ac deinde usque ad extremos lines terre non amplius
+                        reversura, nec ulli unquam Deum colenti noscitura, avolaret. Grifis vero,
+                        sancti viri imperio in conspectu omnium obediens, tradita ei ungula a
+                        finibus illis avolavit, nec deinceps in insula ilia apparuit. Ipse vero,
+                        baptizato rege et populo et omnia in fide edocto ordinatique tribus
+                        episcopis qui inibi plebem fideliter regerent et dicto vale omnibus
+                        Iherosolimam, cum ungula grifis remeavit, ibique cum ymnis et processionibus
+                        gloriose a fratribus susceptus est. Sed inter eos paululum commoratus. Ne
+                        favoralis aura peracti miraculi in labores </span>
+                     <span class="textcontent"> suos latenter irreperet, tumultum populi ad ipsum
+                        confluentis fugiens, assumpto sibi donante patriarcha justi Simeonis brachio
+                        et quibusdam aliis reliquiis Sanctorum in prefata grifis ungula repositis,
+                        cum comite suo Elberto transmarinas partes reliquit, et ad partes cismarinas
+                        quas pridem deseruerat repedavit, tandemque pervenit ad quemdam locum
+                        Ciriliacum nomine, ubi secundum suum propositum coepit aedificare domum ;
+                        homines autem illius loci non cognoscentes tanti viri virtutem certatim
+                        exire illum inde uno animo coegerunt. Ille autem die ac nocte in oratione se
+                        dedit dicens: </span>
+                     <span class="textcontent">« Omnis coeli et terroe cunctorum conditor, in cujus
+                        voluntate cuncta subsistunt, cujus voluntati non est qui resistat, qui
+                        revocas errantes ut non pereant, custodi me servum tuum et ostende mihi
+                        locum in quo tibi mundo corde deserviam quia non possum invenire locum
+                        refrigerii. »</span>
+                     <span class="textcontent"> Et cum orasset ad Dominum validis precibus, surrexit
+                        per exhortationem spiritus talis voluntas, ut per invia montium, vallium,
+                        silvarumque ac per loca asperrima aquarumque decursiones ad locum priorem
+                        quem antea dimiserat, cui nomen Susingum est, remeavit. Advesperascente vero
+                        die, transacto culmine montis, sed quondam dilapsus est vir domini fontem.
+                        Noctem vero illam insomnem duxit, et pervigil in Dei laudibus permansit ;
+                        circa autem gallicinium audivit nole sonitum, pulsansque in latere suum
+                        famulum ait ad eum: </span>
+                     <span class="textcontent">« Audisne, mi frater, signum quod audio » </span>
+                     <span class="textcontent"> Ille econtra: </span>
+                     <span class="textcontent">« Nequaquam, sed miror te patrem dicere talia, tot
+                        juga moncium pertranseuntes nulla signa vidimus. </span>
+                     <span class="textcontent"> Vir autem Dei cultor prumptus </span>
+                     <span class="textcontent"> incumbit in Dei laudibus, in quibus erat solitus.
+                        Intervallo postmodum aliquantulo facto, vice secunda cecinit gallus et
+                        iterum audivit tintinnabalum, ipse autem magis magisque mansit in
+                        orationibus. Demum per intus crepidinis spacium suis auribus clarius
+                        sonorabiliusque allatus est metalli sonitus, sacer igitur Ymerius anxius de
+                        terna tintinnabuli insonatione suum famulum alloquitur dicens : </span>
+                     <span class="textcontent"> « Virtutis te signum audire non posse miror.
+                        »</span>
+                     <span class="textcontent"> Is namque diligenter erigens aures protinus audivit
+                        sonantem nollam in latere montis positam. Venerabilis presbiter Ymerius
+                        gracias agit Deo ; transacto vero noctis crepusculoipsam in partem, in qua
+                        sonitusincrepuerat, cum omni celeritate angelo previo ducatum habuit,
+                        visumque super memoratum signum festinus accipiens deosculansque ac sinui
+                        commendans, subito superni luminis gracia infusus circumquaque habuit
+                        intuitum. Dum autem consideraret amenitatem loci, ex inproviso juxta densam
+                        corilum apparuit sus silvatica cum tribus porcis ex more voluta luto,
+                        fricans se ad arborem prefatam. Extensa autem isdem pater manu signum crucis
+                        edidit, oblitaque ferocitatis sue per crucis dominici signum sus mansueta et
+                        domestica effecta est. Interea accessit vir </span>
+                     <div class="apparatus apparatus_7" data-app-id="apparatus_7">
+                        <div class="reading " data-reading-wits="">
+                           <span class="textcontent">vitae</span>
+                        </div>
+                        <div class="reading Kohler" data-reading-wits="Kohler">
+                           <span class="textcontent">vite</span>
+                        </div>
+                     </div>
+                     <span class="textcontent"> reverendus ad corilum, amputavitque ex ea </span>
+                     <div class="choice">
+                        <span class="textcontent">quemdam</span>
+                        <div class="corr">
+                           <div class="interior">
+                              <span class="textcontent">quendam</span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="apparatus apparatus_8" data-app-id="apparatus_8">
+                        <div class="reading " data-reading-wits="">
+                           <span class="textcontent">surculum</span>
+                        </div>
+                        <div class="reading Kohler" data-reading-wits="Kohler">
+                           <span class="textcontent">surculum</span>
+                        </div>
+                     </div>
+                     <span class="textcontent"> in quo nollam appensam </span>
+                     <div style="display:inline" class="apparatus apparatus_9"
+                        data-app-id="apparatus_9">
+                        <div style="display:inline" class="reading F" data-reading-wits="F">
+                           <span class="textcontent">repererat</span>
+                        </div>
+                        <div class="reading Besson" data-reading-wits="Besson">
+                           <span class="textcontent">reppererat</span>
+                        </div>
+                     </div>
+                     <span class="textcontent">; quem decorticans sustentaculi ferulam </span>
+                     <div class="choice">
+                        <span class="textcontent">fecit</span>
+                        <div class="corr">
+                           <div class="interior">
+                              <span class="textcontent">faecit</span>
+                           </div>
+                        </div>
+                     </div>
+                     <span class="textcontent">, super quam incumbens </span>
+                     <div class="choice">
+                        <span class="textcontent">diucius</span>
+                        <div class="corr">
+                           <div class="interior">
+                              <strong>Regularized form:</strong>
+                              <span class="textcontent">diutius</span>
+                           </div>
+                        </div>
+                     </div>
+                     <span class="textcontent"> sanctus oravit Ymerius ut summi Dei pietas </span>
+                     <div style="display:inline" class="apparatus apparatus_10"
+                        data-app-id="apparatus_10">
+                        <div class="reading EP" data-reading-wits="EP">
+                           <span class="textcontent">fontis venam sibi</span>
+                        </div>
+                        <div style="display:inline" class="reading F" data-reading-wits="F">
+                           <span class="textcontent">fontis sibi vaenam</span>
+                        </div>
+                        <div class="reading Besson" data-reading-wits="Besson">
+                           <span class="textcontent">fontis vaenam sibi</span>
+                        </div>
+                     </div>
+                     <span class="textcontent"> aperiret. Orante itaque sancto Ymerio, de loco quo
+                        ferulam fixerat largiter aqua effluere coepit, qui fons usque in hodiernum
+                        diem salutem praestat infirmis. Mox itaque vir Dei agnovit </span>
+                     <span class="textcontent"> quod labor sui operis ibi haberet portum. Extemplo
+                        igitur exutus indumento spinarum acaleos in ulticarumque asperitatem
+                        incidere et evellere, incendiisque concremando destruere, Deo sibique locum
+                        mundare, templumque preparare curavit, bene igitur jam de foris desiderium
+                        suum extinxerat quod diucius intus in animo ardebat. Hujus sancti Ymerii
+                        Studium fuit super vicinas arbores domum edificare in quo omnibus ad se
+                        venientibus caritatis gratiam libentissime hospitum preparabat, et eterne
+                        vite desiderio saciabat, si quando culpas quorumlibet agnosceret nunquam ab
+                        increpatione parcebat, sed amoris igne succensus studebat per linguam eis
+                        servire. Cuncti vero longe lateque positi, audientes </span>
+                     <div class="choice">
+                        <span class="textcontent">opinionem</span>
+                        <div class="corr">
+                           <div class="interior">
+                              <span class="textcontent">oppinionem</span>
+                           </div>
+                        </div>
+                     </div>
+                     <span class="textcontent"> sancti, frequenter illi transmittebant oblacionum
+                        munera. Vir igitur inclitus Ymerius oratorium sibi in honore beatissimi
+                        Martini confessoris Christi, cujus sacras reliquias secum ex provincia
+                        attulerat, instruxit, ibique nocturno tempore quiescentibus cunctis seipsum
+                        Deo flendo offerebat; dum vero in corporis virtute et in suo fuit robore per
+                        singulos dies sacra missarum sollemnia celebravit, nimio se luctu conficiens
+                        non solum pro suis criminibus, verum etiam pro tocius mundi ; cumque vir
+                        sanctus die quadam dominicum corpus perficeret, affuit mutus cujus ad
+                        loquendum lingua nunquam fuerat soluta, quem Christi sacerdos advocans
+                        libatum Domini corpus ori ejus, commendans diu muta ad loquendum lingua mox
+                        est soluta. Igitur post pactum miraculum, longo jam confectus senio
+                        religiosus Ymerius in corde suo decrevit qualiter suum corpus per martirium
+                        edomaret, lectum humane carni incommodum placuit sibi ex asperrimis facere
+                        petris, et per novem annorum curricula breve tantillum quod quievit, super
+                        ipsas rupes jacuit; sed et per aliud supplicium dilacerare se disposuit,
+                        timens ne aliquando relictum crimen intus in animo fuisset de carnis sue
+                        contagione, cotidie enim in nares cribratum cinerem ponebat, ut si quando ad
+                        se retraheret spiritum, </span>
+                     <span class="textcontent"> cinis intrans per naris concavum evigilare faceret
+                        Dei famulum ; preter hec talem isdem Dei famulus habuisse abstinencie </span>
+                     <div class="choice">
+                        <span class="textcontent">castigationem</span>
+                        <div class="corr">
+                           <div class="interior">
+                              <span class="textcontent">castigacionem</span>
+                           </div>
+                        </div>
+                     </div>
+                     <span class="textcontent"> cognoscitur, tribus diebus in ebdomada semel modicum
+                        ordeacii panis sumebat, ipsum autem panem aqua et cinere confectum circa
+                        horam nonam sumebat. Cumque jam tempus esset ut tanta ac talis virtus
+                        remunerari debuisset, membrorum dolor ad precordia rediit, et cum se morti
+                        proximum agnovisset, ad confessoris Christi Martini basilicam, quam ipse
+                        beatus Ymerius extruxerat, differri se jussit, atque pro </span>
+                     <div class="choice">
+                        <span class="textcontent">exspectatione</span>
+                        <div class="corr">
+                           <div class="interior">
+                              <span class="textcontent">exspectacione</span>
+                           </div>
+                        </div>
+                     </div>
+                     <span class="textcontent"> sui exitus psalmos ymnosque prout valebat cum
+                        clericis decantabat. Inter hec sancta illa anima carne soluta est. Post
+                        mortem quidem illius cotidianis miraculis ejus membra coruscant ad extinctum
+                        namque sancti Ymerii corpus egri veniunt et sanantur, demoniaci liberantur,
+                        leprosi mundantur, claudis gressus restituitur, cecis visus redditur, turba
+                        merencium et languencium variis infirmitatibus oppressa, salutis
+                        medicamentum anime simul et corpore percipit. Perpendite, dilectissimi,
+                        qualiter ejus anima vivit illic ubi semper vivit, cujus hic et mortuum
+                        corpus in tot miraculis vivit. Gratia Domini nostri Jesu Christi qui cum
+                        Patre et Spiritu Sancto vivit et regnat Deus per omnia secula seculorum.
+                        Amen. Explicit vita sancti Ymerii confessoris. </span>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="ui-widget-content ui-resizable panel mssPanel noDisplay" id="MsBE">
+            <div class="panelBanner">
+               <img class="closePanel" title="Close panel"
+                  src="vmachine-Dateien/closePanelButton.htm" alt="X (Close panel)">
+               <a
+                  title="Version MsBE: Bréviaire manuscrit de Berne&#xA;                 &#xA;                "
+                  >Version MsBE: Bréviaire manuscrit de Berne </a>
+            </div>
+            <div class="mssContent">
+               <div class="div1 type-source">
+                  <div class="paragraph">
+                     <span class="textcontent"> Fuit vir nobilis </span>
+                     <div class="apparatus apparatus_1" data-app-id="apparatus_1">
+                        <div class="reading " data-reading-wits="">
+                           <span class="textcontent">quidam</span>
+                        </div>
+                        <div class="reading MsBA" data-reading-wits="MsBA">
+                           <span class="textcontent">quondam</span>
+                        </div>
+                     </div>
+                     <span class="textcontent"> gratia Dei preditus, nomine Ymerius. Hic, a puerili
+                        aetate Deo deditus, </span>
+                     <div class="choice">
+                        <span class="textcontent">quorumdam</span>
+                        <div class="corr">
+                           <div class="interior">
+                              <span class="textcontent">quorundam</span>
+                           </div>
+                        </div>
+                     </div>
+                     <span class="textcontent"> secularium tumultibus depressus, qui nulli animum
+                        dedit voluptati. Sed dum in hac terra adhuc esset positus, despexit jam
+                        quasi aridum mundum cum </span>
+                     <div class="apparatus apparatus_2" data-app-id="apparatus_2">
+                        <div class="reading " data-reading-wits="">
+                           <span class="textcontent">horore</span>
+                        </div>
+                        <div class="reading MsBA" data-reading-wits="MsBA">
+                           <span class="textcontent">Flore</span>
+                        </div>
+                     </div>
+                     <span class="textcontent">. Liberiori namque genere </span>
+                     <div style="display:inline" class="apparatus apparatus_3"
+                        data-app-id="apparatus_3">
+                        <div class="reading " data-reading-wits="">
+                           <span class="textcontent">ex provincia Augaugie et vico Lugduniaco
+                              oriundus, sacris litteris instructus, </span>
+                        </div>
+                        <div style="display:inline" class="reading MsBE" data-reading-wits="MsBE">
+                           <span class="textcontent">Fuit vir nobilis nomine Ymerius ex provincia
+                              Alseaugiae oriendus, sacris litteris instructus qui nulli animumv
+                              voluptati dedit.</span>
+                        </div>
+                     </div>
+                     <span class="textcontent"> cum multos cerneret ire per abruta viciorum ab
+                        occupatione secularium negociorum se custodiendo abstrahere curavit. Maluit
+                        quippe Deo adherere quam hujus mundi viciis inservire. </span>
+                  </div>
+                  <div class="paragraph">
+                     <span class="textcontent">Videbat enim homines mortales secularia opera
+                        exercere, unde gemens in corde suo dicebat : Quid faciam quod cotidie
+                        inpugnor pravis cogitationibus et refrigerii locum minime invenire valeo?
+                        Consilio autem divinitus inito, sacre conversationis oraculum cepit
+                        edificare in paterne hereditatis proprietate. Cumque vir Dei ceptum opus in
+                        promptu haberet, quedam supervenit muliercula nimio stupore accensa, et </span>
+                     <span class="textcontent"> videndi cupiditate anxia et interrogat de muri
+                        fabrica, ex qua re Christi famulus Ymerius intelligens non concessum sibi a
+                        Deo esse locum, imperfectum muri reliquit edificium. Ac citoque proprio
+                        famulo nomine Elberto, relicta domo rebusque propriis ac contribulibus suis
+                        et per abruta viarum deserti iter inchoans devenit in vallem quam vulgo
+                        Susingum nominant, que eodem tempore inhabitata et colonis inculta manebat,
+                        in qua modico tempore ut bonus agricola sentes et spinas propriis manibus
+                        extirpare cepit et ad cultum redigere, memorans psalmographi dulcia eloquia,
+                        qui ait : </span>
+                     <span class="textcontent">De proprio labore manuum panem edentem beatum
+                        fore</span>
+                     <span class="textcontent">. Sato vero agro excretisque segetibus et in aristas
+                        de floribus deductis, nullus in spicis messis colligende fructus apparuit,
+                        cernens igitur sacer Ymerius hoc peractum esse omnipotentis Dei examinatione
+                        ut per Salomonem sapientia testatur : </span>
+                     <span class="textcontent">Quod sicut aurum igne probatur, ita corda filiorum
+                        hominum conprobat Dominus</span>
+                     <span class="textcontent">. </span>
+                  </div>
+                  <div class="paragraph">
+                     <span class="textcontent"> Cepit requirere alme Dei genitricis Lausannensem
+                        ecclesiam</span>
+                     <div class="noteicon">n <div class="note">
+                           <strong>Note:</strong>
+                           <span class="textcontent"> Cernens vir sanclus examinationem Dei, teste
+                              sapientia, quod sicut aurum in igne probalur, ila corda filiorum
+                              hominum comprobat Deus, lawsamiensem ecclesiam requisivit, petens ut
+                              ei circa locum episcopio vicinum degere licuisset. Qui locum aptum non
+                              inveniens Irosolimam transfretavit. Ms.B. = Bréviaire manuscrit de
+                              Berne</span>
+                        </div>
+                     </div>
+                     <span class="textcontent">, ad quam cum pervenisset, honorabiliter a rectoribus
+                        ejusdem ecclesie susceptus est ; horum igitur supplex postulat adjutorium
+                        utei circa locum episcopio vicinum degere licuisset; inter deprecativa autem
+                        verba cartam ab eis eo ordine sibi inscribi rogavit, ut si divina dementia
+                        aliquem illi adquirendi tribueret gratiam duas adquisitionum particulas
+                        prefate ecclesie redderet, tertiam autem portionem sibi famulantibus.
+                        Perambulans igitur vicina omnia perscrutando loca aptum sibi locum minime
+                        invenit, in se itaque reversus vir Dei cepit in interiori suo affectuose
+                        meditari, ut loca illa que Christus corporaliter totius mundi salutem
+                        edocendo circumivit, quocunque incumbente labore visitaret, hanc maxime
+                        labori suo pretendens utilitatem ut si superno placeret auctori, crucem
+                        Christi quam suo gestabat in corpore, usque ad martirii </span>
+                     <span class="textcontent"> palmam quacumque salutari incidente occasione
+                        deportaret; illud dominicum sepissime revolvens : </span>
+                     <span class="textcontent">Qui vult venire post me abneget semetipsum et tollat
+                        crucem suam, et sequatur me</span>
+                     <span class="textcontent">. Hac igitur tam sancta vir venerabilis ductus </span>
+                     <div class="choice">
+                        <span class="textcontent">intentione</span>
+                        <div class="corr">
+                           <div class="interior">
+                              <span class="textcontent">intencione</span>
+                           </div>
+                        </div>
+                     </div>
+                     <span class="textcontent"> Iherosolimam transfretavit, per triennium
+                        sanctissima loca visitando, vigiliis et orationibus die noctuque incessanter
+                        desudavit, post modum vero ut talentum sibi creditum ad usuram lacius
+                        multiplicaret, lingua syra arabicaque inibi instrui instituit. Ea autem
+                        tempestate accidit ut quedam grifis immanissima quondam paganorum insulam,
+                        cujus nomen pro loci remocione et temporis vetustate ab usu nostro
+                        discessit, cotidie insultando horrenda ingluvie devastaret, hoc divina ut
+                        credimus faciente dispensatione, ut qui pro Creatore creaturas adorabant ab
+                        ipsis merito creaturis adligerentur, et quia in prosperis Deum non
+                        recognoverant saltem tormentis ingruentibus afflicti salvatorem
+                        desiderarent. Tanta itaque urgente necessitate rex prefate insule consilio
+                        inito cum primatibus suis, plebe etiam idipsum acclamante, quod fama
+                        Christiane religionis que plurimum Iherosolimis vigebat jamjam ad ipsos
+                        pervenerat, legatos cum litteris ad primates Iherosolimitane urbis
+                        transmisit, </span>
+                     <div class="apparatus apparatus_4" data-app-id="apparatus_4">
+                        <div class="reading " data-reading-wits="">
+                           <span class="textcontent">testificans</span>
+                        </div>
+                        <div class="reading MsBA" data-reading-wits="MsBA">
+                           <span class="textcontent">testificatur</span>
+                        </div>
+                     </div>
+                     <span class="textcontent"> ut si quem sanctum virum ad ipsum </span>
+                     <div class="apparatus apparatus_5" data-app-id="apparatus_5">
+                        <div class="reading " data-reading-wits="">
+                           <span class="textcontent">transmitteret</span>
+                        </div>
+                        <div class="reading MsBA" data-reading-wits="MsBA">
+                           <span class="textcontent">mitterent</span>
+                        </div>
+                     </div>
+                     <span class="textcontent"> qui terram suam </span>
+                     <div class="apparatus apparatus_6" data-app-id="apparatus_6">
+                        <div class="reading " data-reading-wits="">
+                           <span class="textcontent">ab instanti tormento liberaret, tam ipse quam
+                              principes sui et omnis plebs sibi subdita fidem christianam
+                              susciperent</span>
+                        </div>
+                        <div class="reading MsBA" data-reading-wits="MsBA">
+                           <span class="textcontent">ab instanti periculo liberaret, tam ipse quam
+                              omnis plebs sibi subdita, fidem christianam susciperet.</span>
+                        </div>
+                     </div>
+                     <span class="textcontent">. Quo audito viri Iherosolimitani tantum... aggredi
+                        hesitantes renuerunt, beatus vero Ymerius flamine divino celitus inspiratus
+                        non de sua presumens sanctitate sed de sui auctoris confidens virtute, qui
+                        dixit : Si habetis fidem, </span>
+                     <span class="textcontent">sicut granum sinapis diceretis huic arbori moro
+                        eradicare et transplantare in mare et obediret vobis</span>
+                     <span class="textcontent">, legationem a sancto patriarcha suscipiens et
+                        legatis perducentibus eum ad prefatam insulam pervenit, ubi cum magna
+                        honorificentia a </span>
+                     <span class="textcontent"> rege et populo susceptus est. Die itaque prenominata
+                        congruum in locum accito conventu tam plebis quam principum, cum beatus
+                        Ymerius staret in medio eorum, supradicta detestanda belua a scopulis quibus
+                        predam speculando insidebat, descendens in astantem plebem conabatur irruere
+                        ipsam depopulari gestiens, ad cujus alarum horribilem applausum omnes
+                        unanimiter perteriti cum ejulatu magno ad terram prostrati sunt. Beatus vero
+                        Ymerius nullo terrore perculsus est, sed stans in medio conventu, facto
+                        signo crucis imperavit. belue ut mansueta et sine alicujus lesione in locum
+                        sibi paratum descenderet. Ad cujus vocem igitur mansueta ac quasi domestica,
+                        continuo grifis in locum sibi a sancto viro perostensum descendit, beatus
+                        vero Ymerius intendens in coelum orationem cum lacrymis hujusmodi fudit
+                        dicens: « Omnis qui in filii tui humilitate jacentem mundum erexisti, erige
+                        corda </span>
+                     <a class="link" href=""></a>
+                     <span class="textcontent"> prostrate plebis sancti spiritus gratia ut de
+                        infidelitatis tenebris erecta et de instanti periculo ad gratiam sanctissimi
+                        nominis tui liberata et claritatem veri luminis ipsum videlicet solem
+                        justitie recognoscat... Ihesum Christum Dominum nostrum, qui tecum vivit et
+                        regnat per omnia secula seculorum. Amen.» Peracta autem oratione, imperavit
+                        grifi ut minimam pedis sui ungulam proprio rostro abrasam in memoriam rei
+                        geste cederet, ac deinde usque ad extremos lines terre non amplius
+                        reversura, nec ulli unquam Deum colenti noscitura, avolaret. Grifis vero,
+                        sancti viri imperio in conspectu omnium obediens, tradita ei ungula a
+                        finibus illis avolavit, nec deinceps in insula ilia apparuit. Ipse vero,
+                        baptizato rege et populo et omnia in fide edocto ordinatique tribus
+                        episcopis qui inibi plebem fideliter regerent et dicto vale omnibus
+                        Iherosolimam, cum ungula grifis remeavit, ibique cum ymnis et processionibus
+                        gloriose a fratribus susceptus est. Sed inter eos paululum commoratus. Ne
+                        favoralis aura peracti miraculi in labores </span>
+                     <span class="textcontent"> suos latenter irreperet, tumultum populi ad ipsum
+                        confluentis fugiens, assumpto sibi donante patriarcha justi Simeonis brachio
+                        et quibusdam aliis reliquiis Sanctorum in prefata grifis ungula repositis,
+                        cum comite suo Elberto transmarinas partes reliquit, et ad partes cismarinas
+                        quas pridem deseruerat repedavit, tandemque pervenit ad quemdam locum
+                        Ciriliacum nomine, ubi secundum suum propositum coepit aedificare domum ;
+                        homines autem illius loci non cognoscentes tanti viri virtutem certatim
+                        exire illum inde uno animo coegerunt. Ille autem die ac nocte in oratione se
+                        dedit dicens: </span>
+                     <span class="textcontent">« Omnis coeli et terroe cunctorum conditor, in cujus
+                        voluntate cuncta subsistunt, cujus voluntati non est qui resistat, qui
+                        revocas errantes ut non pereant, custodi me servum tuum et ostende mihi
+                        locum in quo tibi mundo corde deserviam quia non possum invenire locum
+                        refrigerii. »</span>
+                     <span class="textcontent"> Et cum orasset ad Dominum validis precibus, surrexit
+                        per exhortationem spiritus talis voluntas, ut per invia montium, vallium,
+                        silvarumque ac per loca asperrima aquarumque decursiones ad locum priorem
+                        quem antea dimiserat, cui nomen Susingum est, remeavit. Advesperascente vero
+                        die, transacto culmine montis, sed quondam dilapsus est vir domini fontem.
+                        Noctem vero illam insomnem duxit, et pervigil in Dei laudibus permansit ;
+                        circa autem gallicinium audivit nole sonitum, pulsansque in latere suum
+                        famulum ait ad eum: </span>
+                     <span class="textcontent">« Audisne, mi frater, signum quod audio » </span>
+                     <span class="textcontent"> Ille econtra: </span>
+                     <span class="textcontent">« Nequaquam, sed miror te patrem dicere talia, tot
+                        juga moncium pertranseuntes nulla signa vidimus. </span>
+                     <span class="textcontent"> Vir autem Dei cultor prumptus </span>
+                     <span class="textcontent"> incumbit in Dei laudibus, in quibus erat solitus.
+                        Intervallo postmodum aliquantulo facto, vice secunda cecinit gallus et
+                        iterum audivit tintinnabalum, ipse autem magis magisque mansit in
+                        orationibus. Demum per intus crepidinis spacium suis auribus clarius
+                        sonorabiliusque allatus est metalli sonitus, sacer igitur Ymerius anxius de
+                        terna tintinnabuli insonatione suum famulum alloquitur dicens : </span>
+                     <span class="textcontent"> « Virtutis te signum audire non posse miror.
+                        »</span>
+                     <span class="textcontent"> Is namque diligenter erigens aures protinus audivit
+                        sonantem nollam in latere montis positam. Venerabilis presbiter Ymerius
+                        gracias agit Deo ; transacto vero noctis crepusculoipsam in partem, in qua
+                        sonitusincrepuerat, cum omni celeritate angelo previo ducatum habuit,
+                        visumque super memoratum signum festinus accipiens deosculansque ac sinui
+                        commendans, subito superni luminis gracia infusus circumquaque habuit
+                        intuitum. Dum autem consideraret amenitatem loci, ex inproviso juxta densam
+                        corilum apparuit sus silvatica cum tribus porcis ex more voluta luto,
+                        fricans se ad arborem prefatam. Extensa autem isdem pater manu signum crucis
+                        edidit, oblitaque ferocitatis sue per crucis dominici signum sus mansueta et
+                        domestica effecta est. Interea accessit vir </span>
+                     <div class="apparatus apparatus_7" data-app-id="apparatus_7">
+                        <div class="reading " data-reading-wits="">
+                           <span class="textcontent">vitae</span>
+                        </div>
+                        <div class="reading Kohler" data-reading-wits="Kohler">
+                           <span class="textcontent">vite</span>
+                        </div>
+                     </div>
+                     <span class="textcontent"> reverendus ad corilum, amputavitque ex ea </span>
+                     <div class="choice">
+                        <span class="textcontent">quemdam</span>
+                        <div class="corr">
+                           <div class="interior">
+                              <span class="textcontent">quendam</span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="apparatus apparatus_8" data-app-id="apparatus_8">
+                        <div class="reading " data-reading-wits="">
+                           <span class="textcontent">surculum</span>
+                        </div>
+                        <div class="reading Kohler" data-reading-wits="Kohler">
+                           <span class="textcontent">surculum</span>
+                        </div>
+                     </div>
+                     <span class="textcontent"> in quo nollam appensam </span>
+                     <div class="apparatus apparatus_9" data-app-id="apparatus_9">
+                        <div class="reading F" data-reading-wits="F">
+                           <span class="textcontent">repererat</span>
+                        </div>
+                        <div class="reading Besson" data-reading-wits="Besson">
+                           <span class="textcontent">reppererat</span>
+                        </div>
+                     </div>
+                     <span class="textcontent">; quem decorticans sustentaculi ferulam </span>
+                     <div class="choice">
+                        <span class="textcontent">fecit</span>
+                        <div class="corr">
+                           <div class="interior">
+                              <span class="textcontent">faecit</span>
+                           </div>
+                        </div>
+                     </div>
+                     <span class="textcontent">, super quam incumbens </span>
+                     <div class="choice">
+                        <span class="textcontent">diucius</span>
+                        <div class="corr">
+                           <div class="interior">
+                              <strong>Regularized form:</strong>
+                              <span class="textcontent">diutius</span>
+                           </div>
+                        </div>
+                     </div>
+                     <span class="textcontent"> sanctus oravit Ymerius ut summi Dei pietas </span>
+                     <div class="apparatus apparatus_10" data-app-id="apparatus_10">
+                        <div class="reading EP" data-reading-wits="EP">
+                           <span class="textcontent">fontis venam sibi</span>
+                        </div>
+                        <div class="reading F" data-reading-wits="F">
+                           <span class="textcontent">fontis sibi vaenam</span>
+                        </div>
+                        <div class="reading Besson" data-reading-wits="Besson">
+                           <span class="textcontent">fontis vaenam sibi</span>
+                        </div>
+                     </div>
+                     <span class="textcontent"> aperiret. Orante itaque sancto Ymerio, de loco quo
+                        ferulam fixerat largiter aqua effluere coepit, qui fons usque in hodiernum
+                        diem salutem praestat infirmis. Mox itaque vir Dei agnovit </span>
+                     <span class="textcontent"> quod labor sui operis ibi haberet portum. Extemplo
+                        igitur exutus indumento spinarum acaleos in ulticarumque asperitatem
+                        incidere et evellere, incendiisque concremando destruere, Deo sibique locum
+                        mundare, templumque preparare curavit, bene igitur jam de foris desiderium
+                        suum extinxerat quod diucius intus in animo ardebat. Hujus sancti Ymerii
+                        Studium fuit super vicinas arbores domum edificare in quo omnibus ad se
+                        venientibus caritatis gratiam libentissime hospitum preparabat, et eterne
+                        vite desiderio saciabat, si quando culpas quorumlibet agnosceret nunquam ab
+                        increpatione parcebat, sed amoris igne succensus studebat per linguam eis
+                        servire. Cuncti vero longe lateque positi, audientes </span>
+                     <div class="choice">
+                        <span class="textcontent">opinionem</span>
+                        <div class="corr">
+                           <div class="interior">
+                              <span class="textcontent">oppinionem</span>
+                           </div>
+                        </div>
+                     </div>
+                     <span class="textcontent"> sancti, frequenter illi transmittebant oblacionum
+                        munera. Vir igitur inclitus Ymerius oratorium sibi in honore beatissimi
+                        Martini confessoris Christi, cujus sacras reliquias secum ex provincia
+                        attulerat, instruxit, ibique nocturno tempore quiescentibus cunctis seipsum
+                        Deo flendo offerebat; dum vero in corporis virtute et in suo fuit robore per
+                        singulos dies sacra missarum sollemnia celebravit, nimio se luctu conficiens
+                        non solum pro suis criminibus, verum etiam pro tocius mundi ; cumque vir
+                        sanctus die quadam dominicum corpus perficeret, affuit mutus cujus ad
+                        loquendum lingua nunquam fuerat soluta, quem Christi sacerdos advocans
+                        libatum Domini corpus ori ejus, commendans diu muta ad loquendum lingua mox
+                        est soluta. Igitur post pactum miraculum, longo jam confectus senio
+                        religiosus Ymerius in corde suo decrevit qualiter suum corpus per martirium
+                        edomaret, lectum humane carni incommodum placuit sibi ex asperrimis facere
+                        petris, et per novem annorum curricula breve tantillum quod quievit, super
+                        ipsas rupes jacuit; sed et per aliud supplicium dilacerare se disposuit,
+                        timens ne aliquando relictum crimen intus in animo fuisset de carnis sue
+                        contagione, cotidie enim in nares cribratum cinerem ponebat, ut si quando ad
+                        se retraheret spiritum, </span>
+                     <span class="textcontent"> cinis intrans per naris concavum evigilare faceret
+                        Dei famulum ; preter hec talem isdem Dei famulus habuisse abstinencie </span>
+                     <div class="choice">
+                        <span class="textcontent">castigationem</span>
+                        <div class="corr">
+                           <div class="interior">
+                              <span class="textcontent">castigacionem</span>
+                           </div>
+                        </div>
+                     </div>
+                     <span class="textcontent"> cognoscitur, tribus diebus in ebdomada semel modicum
+                        ordeacii panis sumebat, ipsum autem panem aqua et cinere confectum circa
+                        horam nonam sumebat. Cumque jam tempus esset ut tanta ac talis virtus
+                        remunerari debuisset, membrorum dolor ad precordia rediit, et cum se morti
+                        proximum agnovisset, ad confessoris Christi Martini basilicam, quam ipse
+                        beatus Ymerius extruxerat, differri se jussit, atque pro </span>
+                     <div class="choice">
+                        <span class="textcontent">exspectatione</span>
+                        <div class="corr">
+                           <div class="interior">
+                              <span class="textcontent">exspectacione</span>
+                           </div>
+                        </div>
+                     </div>
+                     <span class="textcontent"> sui exitus psalmos ymnosque prout valebat cum
+                        clericis decantabat. Inter hec sancta illa anima carne soluta est. Post
+                        mortem quidem illius cotidianis miraculis ejus membra coruscant ad extinctum
+                        namque sancti Ymerii corpus egri veniunt et sanantur, demoniaci liberantur,
+                        leprosi mundantur, claudis gressus restituitur, cecis visus redditur, turba
+                        merencium et languencium variis infirmitatibus oppressa, salutis
+                        medicamentum anime simul et corpore percipit. Perpendite, dilectissimi,
+                        qualiter ejus anima vivit illic ubi semper vivit, cujus hic et mortuum
+                        corpus in tot miraculis vivit. Gratia Domini nostri Jesu Christi qui cum
+                        Patre et Spiritu Sancto vivit et regnat Deus per omnia secula seculorum.
+                        Amen. Explicit vita sancti Ymerii confessoris. </span>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="notesPanel" class="ui-widget-content ui-resizable panel noDisplay">
+            <div class="panelBanner"><img class="closePanel" title="Close panel"
+                  src="vmachine-Dateien/closePanelButton.htm" alt="X (Close panel)"> Textual Notes </div>
+            <div class="noteContent">
+               <strong>Note: </strong>
+               <span class="textcontent"> Cernens vir sanclus examinationem Dei, teste sapientia,
+                  quod sicut aurum in igne probalur, ila corda filiorum hominum comprobat Deus,
+                  lawsamiensem ecclesiam requisivit, petens ut ei circa locum episcopio vicinum
+                  degere licuisset. Qui locum aptum non inveniens Irosolimam transfretavit. Ms.B. =
+                  Bréviaire manuscrit de Berne</span>
+            </div>
+            <div id="noNotesFound" class="noteContent"> Sorry, but there are no notes associated
+               with any currently displayed witness. </div>
+         </div>
+      </div>
+   </body>
+</html>
