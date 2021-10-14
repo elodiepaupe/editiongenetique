@@ -12,7 +12,7 @@ elodie.paupe@unine.ch
 
 --- 
 
-![  w:700](images/VincentVanGogh.PNG)
+![w:700](images/VincentVanGogh.PNG)
 
 Leo Jansen, Hans Luijten, Nienke Bakker (eds.) (2009), _Vincent van Gogh - The Letters_. Amsterdam & The Hague: Van Gogh Museum & Huygens ING. http://vangoghletters.org/vg/letters/let001/letter.html.
 
