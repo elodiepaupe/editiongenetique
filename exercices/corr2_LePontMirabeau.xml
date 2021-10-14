@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../v-machine/schema/vmachine.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../v-machine/schema/vmachine.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-stylesheet type="text/xsl" href="../src/vmachine.xsl"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Le Pont Mirabeau</title>
+                <author>Guillaume Apollinaire</author>
+                <respStmt>
+                    <resp>Poème encodé par</resp>
+                    <name>Melissa Juillet</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Encodage corrigé par</resp>
+                    <name>Élodie Paupe</name>
+                </respStmt>
+            </titleStmt>
+            
+            <publicationStmt>
+                <publisher>Université de Neuchâtel</publisher>
+                <availability status="restricted">
+                    <ab>Attribution 2.0 Generic (CC BY 2.0)</ab>
+                </availability>
+            </publicationStmt>
+
+            <notesStmt>
+                <note type="critical" anchored="true">Une note critique.</note>
+                <note type="biographical" anchored="true">Une note biographique.</note>
+                <note type="render" anchored="true">Informations sur le rendu.</note>
+            </notesStmt>
+
+            <sourceDesc>
+                <p>Édition diplomatique à partir du manuscrit autographe NAF 25604-25635 déposé à la
+                    BNF.</p>
+            </sourceDesc>
+        </fileDesc>
+
+        <encodingDesc>
+            <ab>L'édition intègre les corrections de l'auteur.</ab>
+            <variantEncoding location="internal" method="parallel-segmentation"/>
+        </encodingDesc>
+
+        <revisionDesc>
+            <change>Encodage initial <name>Melissa Juillet</name>
+                <date>février 2021</date>.</change>
+            <change>Adaptation pour Versioning Machine 5.0 <name>Elodie Paupe</name>
+                <date>octobre 2021</date>.</change>
+        </revisionDesc>
+    </teiHeader>
+
+    <facsimile>
+        <graphic url="NAF25604-25635.jpg" xml:id="iNAF_25604-25635"/>
+        <graphic url="LePontMirabeau.jpg" xml:id="iLePontMirabeau"/>
+    </facsimile>
+
+    <text>
+        <front>
+            <div>
+                <listWit>
+                    <witness xml:id="tNAF_25604-25635">Manuscrit du Pont Mirabeau (BNF NAF 25604-25635)</witness>
+                    <witness xml:id="LePontMirabeau">Version publiée par... </witness>
+                </listWit>
+            </div>
+        </front>
+
+        <body>
+            <pb ed="tNAF_25604-25635" facs="#iNAF_25604-25635"/>
+            <pb ed="LePontMirabeau" facs="#iLePontMirabeau"/>
+
+            <div>
+                <head>Le pont Mirabeau</head>
+                
+                <lg n="1">
+                    <l n="1">Sous le pont <app>
+                        <rdg wit="#LePontMirabeau">Mirabeau</rdg>
+                        <rdg wit="#tNAF_25604-25635">mirabeau</rdg>
+                    </app> coule la <app>
+                        <rdg wit="#LePontMirabeau">Seine</rdg>
+                        <rdg wit="#tNAF_25604-25635">Seine.</rdg>
+                    </app>
+                    </l>
+                    <l n="2">Et nos amours 
+                        <app>
+                            <rdg wit="#LePontMirabeau"><lb/></rdg>
+                            <rdg wit="#tNAF_25604-25635"></rdg>
+                        </app>
+                        <app>
+                            <rdg wit="#LePontMirabeau">Faut-il</rdg>
+                            <rdg wit="#tNAF_25604-25635">faut-il</rdg>
+                        </app>qu'il m'en<app>
+                            <rdg wit="#LePontMirabeau">souvienne</rdg>
+                            <rdg wit="#tNAF_25604-25635">souvienne?</rdg>
+                        </app>
+                    </l>
+                    <l n="3">La joie venait toujours après la peine.</l>
+                </lg>
+                
+                <lg n="2">
+                    <l n="4">Vienne la<app>
+                        <rdg wit="#LePontMirabeau">nuit</rdg>
+                        <rdg wit="#tNAF_25604-25635">nuit,</rdg>
+                    </app> 
+                        sonne 
+                        <app>
+                            <rdg wit="#LePontMirabeau">l'heure</rdg>
+                            <rdg wit="#tNAF_25604-25635">l'heure,</rdg>
+                        </app>
+                    </l>
+                    <l n="5">Les jours s'en<app>
+                        <rdg wit="#LePontMirabeau">vont</rdg>
+                        <rdg wit="#tNAF_25604-25635">vont,</rdg>
+                    </app> je <app>
+                        <rdg wit="#LePontMirabeau">demeure</rdg>
+                        <rdg wit="#tNAF_25604-25635">demeure.</rdg>
+                    </app>
+                    </l>
+                </lg>
+                
+                <lg n="3">
+                    <l n="6">
+                        Les mains
+                        <app>
+                            <rdg wit="#LePontMirabeau"></rdg>
+                            <rdg wit="#tNAF_25604-25635"><del rend="strikethrough">Vient le</del></rdg>
+                        </app> dans les <app>
+                            <rdg wit="#LePontMirabeau">mains</rdg>
+                            <rdg wit="#tNAF_25604-25635">mains,</rdg>
+                        </app>
+                        <app>
+                            <rdg wit="#LePontMirabeau"> </rdg>
+                            <rdg wit="#tNAF_25604-25635"><del rend="strikethrough">et</del></rdg>
+                        </app> restons face à <app>
+                            <rdg wit="#LePontMirabeau">face</rdg>
+                            <rdg wit="#tNAF_25604-25635">face,</rdg>
+                        </app>
+                    </l>
+                    <l n="7">Tandis que sous
+                        <app>
+                            <rdg wit="#LePontMirabeau"><lb/></rdg>
+                            <rdg wit="#tNAF_25604-25635"></rdg>
+                        </app>
+                        <app>
+                            <rdg wit="#LePontMirabeau">Le</rdg>
+                            <rdg wit="#tNAF_25604-25635">le</rdg>
+                        </app> pont de nos bras passe</l>
+                    <l n="8">Des éternels regards l'onde si <app>
+                        <rdg wit="#LePontMirabeau">lasse</rdg>
+                        <rdg wit="#tNAF_25604-25635">lasse.</rdg>
+                    </app>
+                    </l>
+                </lg>
+                
+                <lg n="4">
+                    <l n="9">Vienne la<app>
+                        <rdg wit="#LePontMirabeau">nuit</rdg>
+                        <rdg wit="#tNAF_25604-25635">nuit,</rdg>
+                    </app> 
+                        sonne 
+                        <app>
+                            <rdg wit="#LePontMirabeau">l'heure</rdg>
+                            <rdg wit="#tNAF_25604-25635">l'heure,</rdg>
+                        </app>
+                    </l>
+                    <l n="10">Les jours s'en<app>
+                        <rdg wit="#LePontMirabeau">vont</rdg>
+                        <rdg wit="#tNAF_25604-25635">vont,</rdg>
+                    </app> je <app>
+                        <rdg wit="#LePontMirabeau">demeure</rdg>
+                        <rdg wit="#tNAF_25604-25635">demeure.</rdg>
+                    </app>
+                    </l>
+                </lg>
+                
+                <lg n="5">
+                    <l n="11">L'amour s'en <app>
+                        <rdg wit="#LePontMirabeau">va</rdg>
+                        <rdg wit="#tNAF_25604-25635">
+                            <del rend="strikethrough">est allé</del>
+                            <add>va</add>
+                        </rdg>
+                    </app> comme cette eau<app>
+                        <rdg wit="#LePontMirabeau">courante</rdg>
+                        <rdg wit="#tNAF_25604-25635">courante,</rdg>
+                    </app>
+                    </l>
+                    <l n="12">L'amour s'en va
+                        <app>
+                            <rdg wit="#LePontMirabeau"><lb/></rdg>
+                            <rdg wit="#tNAF_25604-25635"></rdg>
+                        </app>
+                        <app>
+                            <rdg wit="#LePontMirabeau">Comme</rdg>
+                            <rdg wit="#tNAF_25604-25635">; comme</rdg>
+                        </app> la vie est lente</l>
+                    <l n="13">Et comme l'Espérance est <app>
+                        <rdg wit="#LePontMirabeau">violente</rdg>
+                        <rdg wit="#tNAF_25604-25635">violente!</rdg>
+                    </app>
+                    </l>
+                </lg>
+                
+                <lg n="6">
+                    <l n="14">Vienne la<app>
+                        <rdg wit="#LePontMirabeau">nuit</rdg>
+                        <rdg wit="#tNAF_25604-25635">nuit,</rdg>
+                    </app> 
+                        sonne 
+                        <app>
+                            <rdg wit="#LePontMirabeau">l'heure</rdg>
+                            <rdg wit="#tNAF_25604-25635">l'heure,</rdg>
+                        </app>
+                    </l>
+                    <l n="15">Les jours s'en<app>
+                        <rdg wit="#LePontMirabeau">vont</rdg>
+                        <rdg wit="#tNAF_25604-25635">vont,</rdg>
+                    </app> je <app>
+                        <rdg wit="#LePontMirabeau">demeure</rdg>
+                        <rdg wit="#tNAF_25604-25635">demeure.</rdg>
+                    </app>
+                    </l>
+                </lg>
+                <lg n="7">
+                    <l n="16">Passent les jours 
+                        <app>
+                            <rdg wit="#LePontMirabeau">et</rdg>
+                            <rdg wit="#tNAF_25604-25635">
+                                <subst>
+                                    <del>la</del>
+                                    <add>et</add>
+                                </subst>
+                            </rdg>
+                        </app>
+                        passent les  
+                        <app>
+                            <rdg wit="#LePontMirabeau">semaines</rdg>
+                            <rdg wit="#tNAF_25604-25635">semaines,</rdg>
+                        </app>
+                    </l>
+                    <l n="17">Ni temps passé
+                        <app>
+                            <rdg wit="#LePontMirabeau"><lb/></rdg>
+                            <rdg wit="#tNAF_25604-25635"></rdg>
+                        </app>
+                        <app>
+                            <rdg wit="#LePontMirabeau"> Ni</rdg>
+                            <rdg wit="#tNAF_25604-25635">; ni</rdg>
+                        </app> les amours<app>
+                            <rdg wit="#LePontMirabeau">reviennent</rdg>
+                            <rdg wit="#tNAF_25604-25635">reviennent;</rdg>
+                        </app>
+                    </l>
+                    <l n="18">Sous le pont Mirabeau coule la Seine</l>
+                </lg>
+                
+                <lg n="8">
+                    <l n="19">Vienne la<app>
+                        <rdg wit="#LePontMirabeau">nuit</rdg>
+                        <rdg wit="#tNAF_25604-25635">nuit,</rdg>
+                    </app> 
+                        sonne 
+                        <app>
+                            <rdg wit="#LePontMirabeau">l'heure</rdg>
+                            <rdg wit="#tNAF_25604-25635">l'heure,</rdg>
+                        </app>
+                    </l>
+                    <l n="20">Les jours s'en<app>
+                        <rdg wit="#LePontMirabeau">vont</rdg>
+                        <rdg wit="#tNAF_25604-25635">vont,</rdg>
+                    </app> je <app>
+                        <rdg wit="#LePontMirabeau">demeure</rdg>
+                        <rdg wit="#tNAF_25604-25635">demeure.</rdg>
+                    </app>
+                    </l>
+                </lg>
+            </div>
+        </body>
+    </text>
+</TEI>

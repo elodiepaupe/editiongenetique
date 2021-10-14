@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../v-machine/schema/vmachine.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../v-machine/schema/vmachine.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-stylesheet type="text/xsl" href="../src/vmachine.xsl"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Le Pont Mirabeau</title>
+                <author>Guillaume Apollinaire</author>
+                <respStmt>
+                    <resp>Poème encodé par</resp>
+                    <name>Melissa Juillet</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Encodage corrigé par</resp>
+                    <name>Élodie Paupe</name>
+                </respStmt>
+            </titleStmt>
+            
+            <publicationStmt>
+                <publisher>Université de Neuchâtel</publisher>
+                <availability status="restricted">
+                    <ab>Attribution 2.0 Generic (CC BY 2.0)</ab>
+                </availability>
+            </publicationStmt>
+
+            <notesStmt>
+                <note type="critical" anchored="true">Une note critique.</note>
+                <note type="biographical" anchored="true">Une note biographique.</note>
+                <note type="render" anchored="true">Informations sur le rendu.</note>
+            </notesStmt>
+
+            <sourceDesc>
+                <p>Édition diplomatique à partir du manuscrit autographe NAF 25604-25635 déposé à la
+                    BNF.</p>
+            </sourceDesc>
+        </fileDesc>
+
+        <encodingDesc>
+            <ab>L'édition intègre les corrections de l'auteur.</ab>
+            <variantEncoding location="internal" method="parallel-segmentation"/>
+        </encodingDesc>
+
+        <revisionDesc>
+            <change>Encodage initial <name>Melissa Juillet</name>
+                <date>février 2021</date>.</change>
+            <change>Adaptation pour Versioning Machine 5.0 <name>Elodie Paupe</name>
+                <date>octobre 2021</date>.</change>
+        </revisionDesc>
+    </teiHeader>
+
+    <facsimile>
+        <graphic url="NAF25604-25635.jpg" xml:id="iNAF_25604-25635"/>
+        <graphic url="LePontMirabeau.jpg" xml:id="iLePontMirabeau"/>
+    </facsimile>
+
+    <text>
+        <front>
+            <div>
+                <listWit>
+                    <witness xml:id="tNAF_25604-25635">Manuscrit du Pont Mirabeau (BNF NAF 25604-25635)</witness>
+                    <witness xml:id="LePontMirabeau">Version publiée par... </witness>
+                </listWit>
+            </div>
+        </front>
+
+        <body>
+            <pb ed="tNAF_25604-25635" facs="#iNAF_25604-25635"/>
+            <pb ed="LePontMirabeau" facs="#iLePontMirabeau"/>
+
+            <div>
+                <head>Le pont Mirabeau</head>
+                
+                <lg n="1">
+                    <l n="1">Sous le pont Mirabeau coule la Seine.</l>
+                    <l n="2">Et nos amours faut-il qu'il m'en souvienne?</l>
+                    <l n="3">La joie venait toujours après la peine.</l>
+                </lg> 
+                
+                <lg n="2">
+                    <l n="4">Vienne la nuit, sonne l'heure, </l>
+                    <l n="5">Les jours s'en vont, je demeure.</l> 
+                </lg>
+                
+                <lg n="3">
+                    <l n="6">Les mains dans les mains, restons face à face, </l>
+                    <l n="7">Tandis que sous le pont de nos bras passe</l>
+                    <l n="8">Des éternels regardss l'onde si lasse</l>
+                </lg>
+                
+                <lg n="4">
+                    <l n="9">Vienne la nuit, sonne l'heure, </l>
+                    <l n="10">Les jours s'en vont, je demeure.</l>
+                </lg>
+                
+                <lg n="5">
+                    <l n="11">L'amour s'en va comme cette eau courante, </l>
+                    <l n="12">L'amour s'en va; comme la vie est lente</l>
+                    <l n="13">Et comme l'espérance est violente! </l>
+                </lg>
+                
+                <lg n="6">
+                    <l n="14">Vienne la nuit, sonne l'heure, </l>
+                    <l n="15">Les jours s'en vont, je demeure.</l>
+                </lg>
+                
+                <lg n="7">
+                    <l n="16">Passent les jours et passent les semaines, </l>
+                    <l n="17">Ni temps passé; nil es amoures reviennent </l>
+                    <l n="18">Sous le pont Mirabeau coule la Seine.</l> 
+                </lg>
+                
+                <lg n="8">
+                    <l n="19">Vienne la nuit, sonne l'heure, </l>
+                    <l n="20">Les jours s'en vont, je demeure.</l>
+                </lg>
+            </div>
+        </body>
+    </text>
+</TEI>
