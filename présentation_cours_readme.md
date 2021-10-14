@@ -31,7 +31,7 @@ Leo Jansen, Hans Luijten, Nienke Bakker (eds.) (2009), _Vincent van Gogh - The L
 
 ---
 
-![ w:800](images/fichierXML.PNG)
+![ w:800](images/fichierXML.png)
 
 [Fichier 1](exemples/let001.xml)
 
