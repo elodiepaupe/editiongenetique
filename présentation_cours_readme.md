@@ -1,12 +1,3 @@
----
-marp: true
-theme: default
-paginate: true
-_paginate: false
-header: '![width:100px](images/logo_unine.jpg)'
-footer: '14 octobre 2021'
----
-
 Université de Neuchâtel
 Master en littérature
 
@@ -21,7 +12,7 @@ elodie.paupe@unine.ch
 
 --- 
 
-![bg left:66% w:700](images/VincentVanGogh.PNG)
+![  w:700](images/VincentVanGogh.PNG)
 
 Leo Jansen, Hans Luijten, Nienke Bakker (eds.) (2009), _Vincent van Gogh - The Letters_. Amsterdam & The Hague: Van Gogh Museum & Huygens ING. http://vangoghletters.org/vg/letters/let001/letter.html.
 
@@ -40,18 +31,18 @@ Leo Jansen, Hans Luijten, Nienke Bakker (eds.) (2009), _Vincent van Gogh - The L
 
 ---
 
-![bg w:800](images/fichierXML.PNG)
+![ w:800](images/fichierXML.PNG)
 
 [Fichier 1](exemples/let001.xml)
 
 
 --- 
 
-![bg  w:800](images/VincentVanGogh.PNG)
+![  w:800](images/VincentVanGogh.PNG)
 
 ---
 
-![bg right:60% w:800](images/workflow.png)
+![w:800](images/workflow.png)
 https://www.oxygenxml.com/xml_editor/xslt_transformation.html
 
 ---
@@ -168,7 +159,7 @@ Source: https://tei-c.org
 
 ---
 
-![bg w:800](images/TEI.PNG)
+![ w:800](images/TEI.PNG)
 
 ---
 
@@ -324,7 +315,7 @@ On utilise donc l'élément `<app>` pour introduire une variation et l'élément
 
 ---
 
-![bg w:800](images/Mirabeau_app.PNG)
+![ w:800](images/Mirabeau_app.PNG)
 
 ---
 
@@ -355,10 +346,10 @@ Sous `@href` se trouve le chemin relatif dans l'arborescence de votre ordinateur
 
 ---
 
-![bg w:800](images/arborescence_sample.PNG)
+![ w:800](images/arborescence_sample.PNG)
 
 ---
-![bg w:800](images/arborescence_schema.PNG)
+![ w:800](images/arborescence_schema.PNG)
 
 ---
 
@@ -372,7 +363,7 @@ La déclaration `<?xml-stylesheet type="text/xsl" href="../src/vmachine.xsl"?>` 
 
 ---
 
-![bg w:800](images/XSLT.PNG)
+![ w:800](images/XSLT.PNG)
 
 ---
 
@@ -380,7 +371,7 @@ La déclaration `<?xml-stylesheet type="text/xsl" href="../src/vmachine.xsl"?>` 
 
 ---
 
-![bg w:800](images/nouveau_scenario.PNG)
+![ w:800](images/nouveau_scenario.PNG)
 
 ---
 
@@ -389,7 +380,7 @@ La déclaration `<?xml-stylesheet type="text/xsl" href="../src/vmachine.xsl"?>` 
 
 ---
 
-![bg w:800](images/XSLT_scenario.PNG)
+![ w:800](images/XSLT_scenario.PNG)
 
 ---
 
@@ -400,7 +391,7 @@ Cela signifie que nos deux fichiers XML et HTML sont enregistrés au même endro
 
 ---
 
-![bg w:800](images/sortie_scenario.PNG)
+![ w:800](images/sortie_scenario.PNG)
 
 ---
 
@@ -409,7 +400,7 @@ Cela signifie que nos deux fichiers XML et HTML sont enregistrés au même endro
 
 ---
 
-![bg w:800](images/fichier_html.PNG)
+![ w:800](images/fichier_html.PNG)
 
 ---
 
