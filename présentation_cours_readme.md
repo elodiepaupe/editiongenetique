@@ -12,7 +12,7 @@ elodie.paupe@unine.ch
 
 --- 
 
-![](images/VincentVanGogh.png)
+![ w:700](images/VincentVanGogh.png)
 
 Leo Jansen, Hans Luijten, Nienke Bakker (eds.) (2009), _Vincent van Gogh - The Letters_. Amsterdam & The Hague: Van Gogh Museum & Huygens ING. http://vangoghletters.org/vg/letters/let001/letter.html.
 
@@ -38,7 +38,7 @@ Leo Jansen, Hans Luijten, Nienke Bakker (eds.) (2009), _Vincent van Gogh - The L
 
 --- 
 
-![  w:800](images/VincentVanGogh.PNG)
+![  w:800](images/VincentVanGogh.png)
 
 ---
 
@@ -99,7 +99,7 @@ Il faut penser le texte comme une architecture:
 
 ---
 
-![w:700](images/arborescence.PNG) 
+![w:700](images/arborescence.png) 
 
 ---
 ```XML
@@ -159,7 +159,7 @@ Source: https://tei-c.org
 
 ---
 
-![ w:800](images/TEI.PNG)
+![ w:800](images/TEI.png)
 
 ---
 
@@ -315,7 +315,7 @@ On utilise donc l'élément `<app>` pour introduire une variation et l'élément
 
 ---
 
-![ w:800](images/Mirabeau_app.PNG)
+![ w:800](images/Mirabeau_app.png)
 
 ---
 
@@ -346,10 +346,10 @@ Sous `@href` se trouve le chemin relatif dans l'arborescence de votre ordinateur
 
 ---
 
-![ w:800](images/arborescence_sample.PNG)
+![ w:800](images/arborescence_sample.png)
 
 ---
-![ w:800](images/arborescence_schema.PNG)
+![ w:800](images/arborescence_schema.png)
 
 ---
 
@@ -363,7 +363,7 @@ La déclaration `<?xml-stylesheet type="text/xsl" href="../src/vmachine.xsl"?>` 
 
 ---
 
-![ w:800](images/XSLT.PNG)
+![ w:800](images/XSLT.png)
 
 ---
 
@@ -371,7 +371,7 @@ La déclaration `<?xml-stylesheet type="text/xsl" href="../src/vmachine.xsl"?>` 
 
 ---
 
-![ w:800](images/nouveau_scenario.PNG)
+![ w:800](images/nouveau_scenario.png)
 
 ---
 
@@ -380,7 +380,7 @@ La déclaration `<?xml-stylesheet type="text/xsl" href="../src/vmachine.xsl"?>` 
 
 ---
 
-![ w:800](images/XSLT_scenario.PNG)
+![ w:800](images/XSLT_scenario.png)
 
 ---
 
@@ -391,7 +391,7 @@ Cela signifie que nos deux fichiers XML et HTML sont enregistrés au même endro
 
 ---
 
-![ w:800](images/sortie_scenario.PNG)
+![ w:800](images/sortie_scenario.png)
 
 ---
 
@@ -400,7 +400,7 @@ Cela signifie que nos deux fichiers XML et HTML sont enregistrés au même endro
 
 ---
 
-![ w:800](images/fichier_html.PNG)
+![ w:800](images/fichier_html.png)
 
 ---
 
